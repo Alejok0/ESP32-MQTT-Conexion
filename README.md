@@ -1,6 +1,6 @@
 # ESP32-MQTT-Conexión
-### Código para establecer una conexión entre HiveMQ y ESP32
-Este es mi código, basado en [este código](https://community.hivemq.com/t/hivemq-using-esp32-and-nodered/1291) proveniente del foro de HiveMQ.
+### Código para establecer una conexión entre EMQX y ESP32
+Este es mi código, basado en [este código](https://docs.emqx.com/en/cloud/latest/connect_to_deployments/esp32.html#connect-over-tls-ssl-port) proveniente del foro de EMQX.
 
 - Conexión con MQTT
 - Lectura de un valor analógico con una fotoresistencia
@@ -32,7 +32,7 @@ Las primeras variables a modificar son las de coneccion a wifi
 const char* ssid = "nombre-de-red";
 const char* password = "contraseña";
 ```
-Esta información es proporcionada por HiveMQ y es generada por el usuario.
+Esta información es proporcionada por EMQX y es generada por el usuario.
 ```
 const char* mqtt_server = "xxxxxxxxxxxxxxxxxxxxxxxx";
 const int mqtt_port = 8883;
