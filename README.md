@@ -1,6 +1,6 @@
 # ESP32-MQTT-Conexión
-### Código para establecer una conexión entre HiveMQ y ESP32
-Este es mi código, basado en [este código](https://community.hivemq.com/t/hivemq-using-esp32-and-nodered/1291) proveniente del foro de HiveMQ.
+### Código para establecer una conexión entre Cayenne y ESP32
+Este es mi código, basado en [este código](https://github.com/myDevicesIoT/Cayenne-MQTT-ESP/blob/master/examples/ESP32/ESP32.ino) proveniente de los ejemplos  de Cayenne.
 
 - Conexión con MQTT
 - Lectura de un valor analógico con una fotoresistencia
@@ -14,17 +14,14 @@ Este es mi código, basado en [este código](https://community.hivemq.com/t/hive
 - Apaga un led enviando un 0(cero) el canal del control
 - Enciende un led enviando un 1(uno) el canal del control
 
-## Librerías
+## Librería
 ```
-#include <WiFi.h>
-#include <PubSubClient.h>
-#include <WiFiClientSecure.h>
+#include <CayenneMQTTESP32.h>
 ```
-En esta tabla encontrarás el origen de las librerías empleadas
+En esta tabla encontrarás el origen de las librería empleada
 | Librería | Origen |
 | ------ | ------ |
-| PubSubClient.h | [Pagina oficial](https://pubsubclient.knolleary.net/) |
-| Wifi.h y WifiClientSecure.h | [Sitio de guithub](https://github.com/arduino-libraries/Arduino_ESP32_OTA) |
+| Cayenne |[Sitio de guithub] (https://github.com/myDevicesIoT/Cayenne-MQTT-ESP) |
 
 ## Variables a modificar
 Las primeras variables a modificar son las de coneccion a wifi
@@ -32,17 +29,17 @@ Las primeras variables a modificar son las de coneccion a wifi
 const char* ssid = "nombre-de-red";
 const char* password = "contraseña";
 ```
-Esta información es proporcionada por HiveMQ y es generada por el usuario.
+Esta información es proporcionada por Cayenne
 ```
 const char* mqtt_server = "xxxxxxxxxxxxxxxxxxxxxxxx";
-const int mqtt_port = 8883;
 const char* mqtt_username = "user";
 const char* mqtt_password = "Qwerty123";
+const char* client_id = "xxxxxxxxxxxxxxxxxxxxxxxxxx"
 ```
 Los canales son para la manipulación de los componentes
 ```
-const char* CONTROL_LED_TOPIC = "control-led";
-const char* VALOR_ANALOGICO_TOPIC = "valor-analogico";
+const int CONTROL_LED_TOPIC = "control-led";
+const int VALOR_ANALOGICO_TOPIC = 0;
 ```
 Pines de entrada (el fotoresistor) y salida (el led)
 ```
