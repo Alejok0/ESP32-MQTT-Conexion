@@ -38,8 +38,8 @@ const char* client_id = "xxxxxxxxxxxxxxxxxxxxxxxxxx"
 ```
 Los canales son para la manipulación de los componentes
 ```
-const int CONTROL_LED_TOPIC = "control-led";
-const int VALOR_ANALOGICO_TOPIC = 0;
+const int CONTROL_LED_TOPIC = 0;
+const int VALOR_ANALOGICO_TOPIC = 1;
 ```
 Pines de entrada (el fotoresistor) y salida (el led)
 ```
